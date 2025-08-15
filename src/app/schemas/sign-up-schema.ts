@@ -5,7 +5,6 @@ export const signUpSchema = z
     fullname: z
       .string()
       .min(3, { message: "O nome deve conter no mínimo 3 caracteres" }),
-    cpf: z.string().length(11, { message: "O CPF deve conter 11 dígitos" }),
     email: z.email({ message: "Digite um e-mail válido." }),
     password: z
       .string()
