@@ -7,7 +7,7 @@ import { FixtureLineup } from "@/types/events";
 
 import { TypographyMuted, TypographySmall } from "@/components/ui/typography";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Divider } from "@/components/ui/divider";
+import { OrDivider } from "@/components/ui/or-divider";
 
 const positionLabels: Record<string, { label: string; bg: string }> = {
   G: {
@@ -34,7 +34,7 @@ export function MatchLineups({ data }: { data: FixtureLineup[] }) {
 
   return (
     <div className="mt-3 space-y-3">
-      <Divider>Treinadores</Divider>
+      <OrDivider>Treinadores</OrDivider>
       <div className="flex justify-between">
         <div className="flex items-center gap-3">
           <Avatar>

@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { LoginForm } from "@/components/login-form";
-import { TermsPrivacyFooter } from "@/components/terms-privacy-footer";
+import { TermsPrivacy } from "@/components/terms-privacy";
 
 export default function LoginPage() {
   return (
@@ -20,7 +20,7 @@ export default function LoginPage() {
           <LoginForm />
         </CardContent>
       </Card>
-      <TermsPrivacyFooter />
+      <TermsPrivacy />
     </div>
   );
 }

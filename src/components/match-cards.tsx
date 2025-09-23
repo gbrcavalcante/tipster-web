@@ -2,7 +2,7 @@ import { getTotalCards } from "@/utils/get-total-cards";
 
 import { TeamsPrediction } from "@/types/predictions";
 import { TypographySmall } from "@/components/ui/typography";
-import { Divider } from "@/components//ui/divider";
+import { OrDivider } from "@/components/ui/or-divider";
 
 export function MatchCards({ data }: { data: TeamsPrediction }) {
   const { away, home } = data;
@@ -167,7 +167,7 @@ export function MatchCards({ data }: { data: TeamsPrediction }) {
     <div className="mt-6 space-y-6">
       {Object.entries(teamMetrics).map(([key, value], index) => (
         <div key={index}>
-          <Divider>{key}</Divider>
+          <OrDivider>{key}</OrDivider>
           {value.map((team, index) => (
             <div className="flex justify-between items-center mt-3" key={index}>
               <div className="w-[100px]">

@@ -4,7 +4,7 @@ import { calculateAverage } from "@/utils/calculate-average";
 import { PredictionsData, TeamsPrediction } from "@/types/predictions";
 
 import { TypographySmall } from "@/components/ui/typography";
-import { Divider } from "@/components/ui/divider";
+import { OrDivider } from "@/components/ui/or-divider";
 import { Stat, StatDescription, StatTitle } from "@/components/ui/stat";
 
 const percentLabels: Record<string, string> = {
@@ -121,7 +121,7 @@ export function MatchPredictions({ data }: { data: dataProps }) {
 
   return (
     <div className="mt-6 space-y-6">
-      <Divider>Resultado</Divider>
+      <OrDivider>Resultado</OrDivider>
       <div className="flex gap-3 justify-between">
         {Object.entries(predictions.percent).map(([key, value], index) => (
           <Stat
@@ -135,7 +135,7 @@ export function MatchPredictions({ data }: { data: dataProps }) {
       </div>
       {Object.entries(teamMetrics).map(([key, value], index) => (
         <div key={index}>
-          <Divider>{key}</Divider>
+          <OrDivider>{key}</OrDivider>
           {value.map((team, index) => (
             <div className="flex justify-between items-center mt-3" key={index}>
               <TypographySmall>{team.homeValue}</TypographySmall>

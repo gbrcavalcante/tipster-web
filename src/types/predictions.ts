@@ -1,5 +1,7 @@
 // ===== INTERFACES BÁSICAS =====
 
+import { LeagueBasic } from "./league";
+
 export interface Winner {
   id: number;
   name: string;
@@ -24,17 +26,6 @@ export interface PredictionsData {
   goals: GoalsPrediction;
   advice: string;
   percent: Percent;
-}
-
-// ===== INTERFACES PARA LEAGUE BÁSICA (dentro de Prediction) =====
-
-export interface LeagueBasic {
-  id: number;
-  name: string;
-  country: string;
-  logo: string;
-  flag: string;
-  season: number;
 }
 
 // ===== INTERFACES DE ESTATÍSTICAS DOS TIMES =====

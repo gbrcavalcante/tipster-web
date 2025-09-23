@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function TermsPrivacyFooter() {
+export function TermsPrivacy() {
   return (
     <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
       Ao clicar em continuar, você concorda com nossos{" "}

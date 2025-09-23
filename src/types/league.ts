@@ -14,7 +14,10 @@ export interface League {
 export interface LeagueBasic {
   id: number;
   name: string;
+  country: string;
   logo: string;
+  flag: string;
+  season: number;
 }
 
 export interface Country {
