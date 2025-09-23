@@ -112,7 +112,7 @@ export function MatchPredictions({ data }: { data: dataProps }) {
     },
   ];
 
-  const teamMetrics: Record<string, any[]> = {
+  const teamMetrics = {
     Gols: goalMetrics,
     "Clean Sheet": defenseMetrics,
     Pênaltis: penaltyMetrics,

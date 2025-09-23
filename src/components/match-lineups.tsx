@@ -68,7 +68,7 @@ export function MatchLineups({ data }: { data: FixtureLineup[] }) {
           </div>
         </div>
       </div>
-      <Divider>Titulares</Divider>
+      <OrDivider>Titulares</OrDivider>
       <div className="flex justify-between items-center">
         <div className="space-y-1">
           {Object.values(home.startXI).map((value) => {
@@ -115,7 +115,7 @@ export function MatchLineups({ data }: { data: FixtureLineup[] }) {
           })}
         </div>
       </div>
-      <Divider>Reservas</Divider>
+      <OrDivider>Reservas</OrDivider>
       <div className="flex justify-between items-center">
         <div className="space-y-1">
           {Object.values(home.substitutes).map((value) => {
