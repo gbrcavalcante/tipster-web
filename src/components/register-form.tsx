@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { LoginFormData, loginSchema } from "@/schemas/login-schema";
+import { RegisterFormData, registerSchema } from "@/schemas/register-schema";
 
 import { Loader2 } from "lucide-react";
 
@@ -22,12 +22,13 @@ import { OrDivider } from "@/components/ui/or-divider";
 import { InputPassword } from "@/components/ui/input-password";
 
 
-export function LoginForm() {
-  const form = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
+export function RegisterForm() {
+  const form = useForm<RegisterFormData>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
@@ -35,7 +36,7 @@ export function LoginForm() {
     formState: { isSubmitting },
   } = form;
 
-  function onSubmit(data: LoginFormData) {
+  function onSubmit(data: RegisterFormData) {
     console.log(data);
   }
 
@@ -52,10 +53,11 @@ export function LoginForm() {
               fill="currentColor"
             />
           </svg>
-          Login com Google
+          Cadastrar com Google
         </Button>
-        <OrDivider>Ou continue com</OrDivider>
+        <OrDivider>Ou continue com</OrDivider>{" "}
         <div className="grid gap-6">
+       
           <FormField
             control={form.control}
             name="email"
@@ -74,15 +76,22 @@ export function LoginForm() {
             name="password"
             render={({ field }) => (
               <FormItem className="grid gap-3">
-                <div className="flex items-center">
-                  <FormLabel>Senha</FormLabel>
-                  <Link
-                    href="/forgot-password"
-                    className="ml-auto text-sm underline-offset-4 hover:underline"
-                  >
-                    Esqueceu sua senha?
-                  </Link>
-                </div>
+                <FormLabel>Senha</FormLabel>
+
+                <FormControl>
+                  <InputPassword required {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="confirmPassword"
+            render={({ field }) => (
+              <FormItem className="grid gap-3">
+                <FormLabel>Confirme sua senha</FormLabel>
+
                 <FormControl>
                   <InputPassword required {...field} />
                 </FormControl>
@@ -91,13 +100,13 @@ export function LoginForm() {
             )}
           />
           <Button type="submit" className="w-full">
-            {isSubmitting ? <Loader2 className="animate-spin" /> : "Login"}
+            {isSubmitting ? <Loader2 className="animate-spin" /> : "Cadastrar"}
           </Button>
         </div>
         <div className="text-center text-sm">
-          Não tem uma conta?{" "}
-          <Link href="/register" className="underline underline-offset-4">
-            Cadastre-se
+          Já tem uma conta?{" "}
+          <Link href="/login" className="underline underline-offset-4">
+            Faça login
           </Link>
         </div>
       </form>
